@@ -237,7 +237,7 @@ func goFun(Url string, postContent string, Referer string, XforwardFor bool, cus
 	}()
 
 	transport := &http.Transport{
-		TLSClientConfig: &tls.Config{InsecureSkipVerify: true},
+		TLSClientConfig: &tls.Config{	NextProtos: []string{"h2"},InsecureSkipVerify: true},
 	}
 
 	for true {
